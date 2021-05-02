@@ -1,4 +1,8 @@
-# Python Port Scanner by Courtbox...
+'''
+Python Port Scanner by Courtbox
+
+Version 1.0
+'''
 
 
 
