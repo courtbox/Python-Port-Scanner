@@ -1,11 +1,13 @@
+import socket
+import ipaddress
+import time
+
+
+
 # Python Port Scanner by Courtbox...
 
 
 
-
-
-import socket
-import time
 openPort = 0
 closedPort = 0
 
@@ -19,6 +21,7 @@ def scanPort(ipaddress, port):
         sock = socket.socket()
         sock.settimeout(0.5)
         time.sleep(sleepTime)
+
         sock.connect((ipaddress, port))
         
         # Open port notification...
@@ -38,6 +41,13 @@ def scanPort(ipaddress, port):
 
 # Entering Target IP Address...
 ipaddress = input('Example: 140.82.112.3\n\n[+] Enter the target IP address to scan: ')
+def ipScan(ipaddress):
+    try:
+        socket.inet_aton(ipaddress)
+        print('[+] VALID ENTRY.')
+    except socket.error:
+        print('[-] INVALID ENTRY.')
+ipScan(ipaddress)
 
 
 
